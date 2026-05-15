@@ -13,13 +13,28 @@ namespace WheelOfFortune.Utils.RankDeterminer
             if (levelNumber == 1)
                 return Rank.Silver;
 
-            foreach (var rankData in _rankConfig.RankData)
+            Rank resultRank = Rank.Bronze;
+            int highestMatchedInterval = 0;
+
+            foreach (LevelRankData rankData in _rankConfig.RankDatas)
             {
-                if (levelNumber % rankData.RankInterval == 0)
-                    return rankData.Rank;
+                if (rankData.RankInterval <= 0)
+                {
+                    Debug.LogWarning($"Invalid rank interval: {rankData.RankInterval}");
+                    continue;
+                }
+
+                if (levelNumber % rankData.RankInterval != 0)
+                    continue;
+
+                if (rankData.RankInterval > highestMatchedInterval)
+                {
+                    highestMatchedInterval = rankData.RankInterval;
+                    resultRank = rankData.Rank;
+                }
             }
 
-            return Rank.Bronze;
+            return resultRank;
         }
     }
 }
