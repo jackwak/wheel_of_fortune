@@ -33,7 +33,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
 
         void OnDisable()
         {
-            _eventBus.Unsubscribe<LevelChangedEventData>(OnLevelNumberChanged);
+            _eventBus.UnSubscribe<LevelChangedEventData>(OnLevelNumberChanged);
         }
 
         public void Initialize(int startLevel)

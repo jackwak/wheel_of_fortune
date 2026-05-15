@@ -25,7 +25,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
 
         void OnDisable()
         {
-            _eventBus.Unsubscribe<LevelChangedEventData>(OnLevelChanged);
+            _eventBus.UnSubscribe<LevelChangedEventData>(OnLevelChanged);
         }
 
         void Start()
@@ -38,13 +38,20 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
             _numberController.ScrollNumbers();
         }
 
-        int level = 2;
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                NextLevel();
+            }
+        }
 
-        [ContextMenu(" Next Level ")]
+        int level = 2;
         public void NextLevel()
         {
             _eventBus.Publish(new LevelChangedEventData(level));
             level++;
+            Debug.Log(level);
         }
     }
 }
