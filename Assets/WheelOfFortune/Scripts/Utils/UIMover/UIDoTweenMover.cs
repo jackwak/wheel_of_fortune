@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace WheelOfFortune.Utils
+namespace WheelOfFortune.Utils.UIMover
 {
     public class UIDoTweenMover : IUIMover
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace WheelOfFortune.Utils
+namespace WheelOfFortune.Utils.UIMover
 {
     public interface IUIMover
     {
