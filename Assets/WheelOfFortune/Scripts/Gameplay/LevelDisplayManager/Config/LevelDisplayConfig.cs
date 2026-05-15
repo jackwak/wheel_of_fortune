@@ -5,10 +5,10 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
     [CreateAssetMenu(fileName = "LevelDisplayConfig", menuName = "WheelOfFortune/LevelDisplayManager/LevelDisplayConfig")]
     public class LevelDisplayConfig : ScriptableObject
     {
-        [SerializeField] private int _maxLevel;
-        [SerializeField] private int _startLevel;
+        [SerializeField] private int _extraVisibleItemBuffer = 2;
+        [SerializeField] private int _startLevel = 1;
 
-        public int MaxLevel => _maxLevel;
+        public int ExtraVisibleItemBuffer => _extraVisibleItemBuffer;
         public int StartLevel => _startLevel;
     }
 }

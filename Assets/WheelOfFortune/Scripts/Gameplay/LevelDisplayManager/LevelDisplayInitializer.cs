@@ -12,7 +12,9 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
         [Header("References")]
         [SerializeField] private LevelDisplayNumberIndicatorBehaviour _numberIndicatorBehaviour;
         [SerializeField] private LevelDisplayNumberBehaviour _levelNumberPrefab;
+        [SerializeField] private RectTransform _levelDisplayBackgroundRect;
         [SerializeField] private Transform _container;
+
         private DiContainer _diContainer;
 
         [Inject]
@@ -25,7 +27,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
         {
             LevelDisplayNumberBehaviour[] levelNumbers = SpawnLevelNumbers();
             ArrangeLevelNumbers(levelNumbers);
-            numberController.Initialize(levelNumbers);
+            numberController.Initialize(levelNumbers, _container as RectTransform, _config.StartLevel);
             _numberIndicatorBehaviour.Initialize(_config.StartLevel);
         }
 
@@ -40,9 +42,14 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
 
         private LevelDisplayNumberBehaviour[] SpawnLevelNumbers()
         {
-            LevelDisplayNumberBehaviour[] levelNumbers = new LevelDisplayNumberBehaviour[_config.MaxLevel];
+            float width = _levelDisplayBackgroundRect.rect.width;
+            float stepSize = _numberConfig.StepSize;
 
-            for (int i = 0; i < _config.MaxLevel; i++)
+            int visibleCount = Mathf.FloorToInt(width / stepSize) + _config.ExtraVisibleItemBuffer;
+
+            LevelDisplayNumberBehaviour[] levelNumbers = new LevelDisplayNumberBehaviour[visibleCount];
+
+            for (int i = 0; i < visibleCount; i++)
             {
                 int level = _config.StartLevel + i;
                 
