@@ -38,7 +38,7 @@ public sealed class EventBus : IEventBus
         _subscribers[eventType].Add(callback);
     }
 
-    public void Unsubscribe<T>(Action<T> callback) where T : struct
+    public void UnSubscribe<T>(Action<T> callback) where T : struct
     {
         if (callback == null)
         {
