@@ -1,4 +1,5 @@
 using UnityEngine;
+using WheelOfFortune.Config;
 using Zenject;
 
 namespace WheelOfFortune.Gameplay.LevelDisplayManager
@@ -6,7 +7,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
     public class LevelDisplayInitializer : MonoBehaviour
     {
         [Header("Config")]
-        [SerializeField] private LevelDisplayConfig _config;
+        [SerializeField] private LevelConfig _config;
         [SerializeField] private LevelDisplayNumberConfig _numberConfig;
 
         [Header("References")]
@@ -44,8 +45,9 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
         {
             float width = _levelDisplayBackgroundRect.rect.width;
             float stepSize = _numberConfig.StepSize;
+            int extraVisibleItemBuffer = 2;
 
-            int visibleCount = Mathf.FloorToInt(width / stepSize) + _config.ExtraVisibleItemBuffer;
+            int visibleCount = Mathf.FloorToInt(width / stepSize) + extraVisibleItemBuffer;
 
             LevelDisplayNumberBehaviour[] levelNumbers = new LevelDisplayNumberBehaviour[visibleCount];
 
