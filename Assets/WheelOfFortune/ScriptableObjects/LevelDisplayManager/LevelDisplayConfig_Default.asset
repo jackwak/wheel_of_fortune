@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: LevelDisplayConfig_Default
   m_EditorClassIdentifier: 
   _maxLevel: 50
+  _startLevel: 1
