@@ -7,7 +7,7 @@ namespace WheelOfFortune.Config
     {
         [SerializeField] private LevelRankData[] _rankData;
 
-        public LevelRankData[] RankData => _rankData;
+        public LevelRankData[] RankDatas => _rankData;
     }
     [System.Serializable]
     public struct LevelRankData
