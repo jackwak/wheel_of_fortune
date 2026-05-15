@@ -9,8 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 028bae8a609c1d24a9bbe0c517055889, type: 3}
-  m_Name: LevelDisplayConfig_Default
+  m_Script: {fileID: 11500000, guid: da16946984868e545b9fbcec8a3fea57, type: 3}
+  m_Name: LevelRankConfig_Default
   m_EditorClassIdentifier: 
-  _maxLevel: 50
-  _startLevel: 1
+  _rankData:
+  - RankInterval: 1
+    Rank: 0
+  - RankInterval: 5
+    Rank: 1
+  - RankInterval: 30
+    Rank: 2
