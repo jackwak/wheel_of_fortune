@@ -2038,6 +2038,7 @@ MonoBehaviour:
   _numberConfig: {fileID: 11400000, guid: d7794143a1c4a3e4c8fe4b4b602aaf0b, type: 2}
   _numberIndicatorBehaviour: {fileID: 1457063403}
   _levelNumberPrefab: {fileID: 5596594402781770423, guid: 3c2bafd6800253047acdee4f8ba8b9aa, type: 3}
+  _levelDisplayBackgroundRect: {fileID: 871461639}
   _container: {fileID: 1424351421}
 --- !u!114 &1457063401
 MonoBehaviour:
