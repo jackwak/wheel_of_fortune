@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Events;
 using Zenject;
 
 namespace WheelOfFortune.Gameplay.LevelDisplayManager
@@ -34,11 +33,18 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
             _initializer.Initialize(_numberController);
         }
 
-        [ContextMenu("Test Scroll")]
         private void OnLevelChanged(LevelChangedEventData eventData)
         {
             _numberController.ScrollNumbers();
         }
 
+        int level = 2;
+
+        [ContextMenu(" Next Level ")]
+        public void NextLevel()
+        {
+            _eventBus.Publish(new LevelChangedEventData(level));
+            level++;
+        }
     }
 }

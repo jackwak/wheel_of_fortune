@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace WheelOfFortune.Gameplay.LevelDisplayManager
 {
@@ -9,14 +10,23 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
         [SerializeField] private LevelDisplayNumberConfig _numberConfig;
 
         [Header("References")]
+        [SerializeField] private LevelDisplayNumberIndicatorBehaviour _numberIndicatorBehaviour;
         [SerializeField] private LevelDisplayNumberBehaviour _levelNumberPrefab;
         [SerializeField] private Transform _container;
+        private DiContainer _diContainer;
+
+        [Inject]
+        public void Construct(DiContainer diContainer)
+        {
+            _diContainer = diContainer;
+        }
 
         public void Initialize(LevelDisplayNumberController numberController)
         {
             LevelDisplayNumberBehaviour[] levelNumbers = SpawnLevelNumbers();
             ArrangeLevelNumbers(levelNumbers);
             numberController.Initialize(levelNumbers);
+            _numberIndicatorBehaviour.Initialize(_config.StartLevel);
         }
 
         private void ArrangeLevelNumbers(LevelDisplayNumberBehaviour[] levelNumbers)
@@ -34,8 +44,10 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
 
             for (int i = 0; i < _config.MaxLevel; i++)
             {
-                levelNumbers[i] = Instantiate(_levelNumberPrefab, _container);
-                levelNumbers[i].Initialize(new LevelDisplayNumberData(i + 1));
+                int level = _config.StartLevel + i;
+                
+                levelNumbers[i] = _diContainer.InstantiatePrefabForComponent<LevelDisplayNumberBehaviour>(_levelNumberPrefab, _container);
+                levelNumbers[i].Initialize(new LevelDisplayNumberData(level));
             }
 
             return levelNumbers;

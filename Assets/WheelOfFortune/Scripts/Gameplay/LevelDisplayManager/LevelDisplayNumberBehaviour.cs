@@ -1,32 +1,50 @@
 using TMPro;
 using UnityEngine;
+using WheelOfFortune.Config;
+using WheelOfFortune.Utils.RankDeterminer;
+using Zenject;
 
-public class LevelDisplayNumberBehaviour : MonoBehaviour
+namespace WheelOfFortune.Gameplay.LevelDisplayManager
 {
-    [Header("Data")]
-    private LevelDisplayNumberData _numberData;
-
-    [Header("References")]
-    [SerializeField] private TextMeshProUGUI _levelNumberText;
-
-    public void Initialize(LevelDisplayNumberData numberData)
+    public class LevelDisplayNumberBehaviour : MonoBehaviour
     {
-        _numberData = numberData;
-        UpdateDisplay();
+        [Header("Data")]
+        private LevelDisplayNumberData _numberData;
+
+        [Header("Dependencies")]
+        private RankDeterminer _rankDeterminer;
+        private RankColorPalette _rankPalette;
+        
+        [Header("References")]
+        [SerializeField] private TextMeshProUGUI _levelNumberText;
+
+        [Inject]
+        public void Construct(RankDeterminer rankDeterminer, RankColorPalette rankPalette)
+        {
+            _rankDeterminer = rankDeterminer;
+            _rankPalette = rankPalette;
+        }
+
+        public void Initialize(LevelDisplayNumberData numberData)
+        {
+            _numberData = numberData;
+            UpdateDisplay();
+        }
+
+        private void UpdateDisplay()
+        {
+            _levelNumberText.text = _numberData.LevelNumber.ToString();
+            _levelNumberText.color =  _rankPalette.GetColor(_rankDeterminer.DetermineRank(_numberData.LevelNumber));
+        }
     }
-    
-    private void UpdateDisplay()
-    {
-        _levelNumberText.text = _numberData.LevelNumber.ToString();
-    }
-}
 
-public struct LevelDisplayNumberData
-{
-    public int LevelNumber { get; }
-
-    public LevelDisplayNumberData(int levelNumber)
+    public struct LevelDisplayNumberData
     {
-        LevelNumber = levelNumber;
+        public int LevelNumber { get; }
+
+        public LevelDisplayNumberData(int levelNumber)
+        {
+            LevelNumber = levelNumber;
+        }
     }
 }

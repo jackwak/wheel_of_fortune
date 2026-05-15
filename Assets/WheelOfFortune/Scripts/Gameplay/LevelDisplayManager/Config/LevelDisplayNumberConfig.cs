@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace WheelOfFortune.Gameplay.LevelDisplayManager
 {
-    [CreateAssetMenu(fileName = "LevelDisplayNumberConfig", menuName = "ScriptableObjects/LevelDisplayManager/LevelDisplayNumberConfig")]
+    [CreateAssetMenu(fileName = "LevelDisplayNumberConfig", menuName = "WheelOfFortune/LevelDisplayManager/LevelDisplayNumberConfig")]
     public class LevelDisplayNumberConfig : ScriptableObject
     {
         [SerializeField] private float _numberSpacing = 30f;
