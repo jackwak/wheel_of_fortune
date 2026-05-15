@@ -1,4 +1,4 @@
-namespace WheelOfFortune.Gameplay.LevelDisplayManager
+namespace WheelOfFortune.Events
 {
     public struct LevelChangedEventData
     {
