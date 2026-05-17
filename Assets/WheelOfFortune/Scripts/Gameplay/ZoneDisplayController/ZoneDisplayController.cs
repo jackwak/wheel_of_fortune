@@ -5,6 +5,7 @@ using Zenject;
 using WheelOfFortune.Events;
 using WheelOfFortune.Config;
 using WheelOfFortune.Enums;
+using WheelOfFortune.Utils.RankDeterminer;
 
 public class ZoneDisplayController : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class ZoneDisplayController : MonoBehaviour
     [SerializeField] private LevelConfig _levelConfig;
 
     private IEventBus _eventBus;
+    private RankDeterminer _rankDeterminer;
 
     [Inject]
-    public void Construct(IEventBus eventBus)
+    public void Construct(IEventBus eventBus, RankDeterminer rankDeterminer)
     {
         _eventBus = eventBus;
+        _rankDeterminer = rankDeterminer;
     }
 
     private void OnEnable()
@@ -67,42 +70,13 @@ public class ZoneDisplayController : MonoBehaviour
 
         while (true)
         {
-            Rank rank = DetermineRank(nextLevel);
+            Rank rank = _rankDeterminer.DetermineRank(nextLevel);
 
             if (rank == targetRank)
                 return nextLevel;
 
             nextLevel++;
         }
-    }
-
-    private Rank DetermineRank(int levelNumber)
-    {
-        if (levelNumber == 1)
-            return Rank.Silver;
-
-        Rank resultRank = Rank.Bronze;
-        int highestMatchedInterval = 0;
-
-        foreach (LevelRankData rankData in _levelRankConfig.RankDatas)
-        {
-            if (rankData.RankInterval <= 0)
-            {
-                Debug.LogWarning($"Invalid rank interval: {rankData.RankInterval}");
-                continue;
-            }
-
-            if (levelNumber % rankData.RankInterval != 0)
-                continue;
-
-            if (rankData.RankInterval > highestMatchedInterval)
-            {
-                highestMatchedInterval = rankData.RankInterval;
-                resultRank = rankData.Rank;
-            }
-        }
-
-        return resultRank;
     }
 }
 
