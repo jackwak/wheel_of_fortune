@@ -4,6 +4,7 @@ using WheelOfFortune.Utils.RankDeterminer;
 using Zenject;
 using UnityEngine;
 using WheelOfFortune.Config;
+using WheelOfFortune.Utils.ObjectSpinner;
 
 public class SceneInstaller : MonoInstaller
 {
@@ -15,5 +16,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<IUIMover>().To<UIDoTweenMover>().AsSingle();
         Container.Bind<RankDeterminer>().FromComponentInHierarchy().AsSingle();
         Container.Bind<RankColorPalette>().FromInstance(_numberColorPalette).AsSingle();
+        Container.Bind<IObjectSpinner>().To<DoTweenObjectSpinner>().AsTransient();
     }
 }
