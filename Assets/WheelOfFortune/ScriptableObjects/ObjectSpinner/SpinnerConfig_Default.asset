@@ -15,4 +15,5 @@ MonoBehaviour:
   minSpinCount: 3
   maxSpinCount: 7
   spinDuration: 2
-  spinEase: 17
+  spinEase: 21
+  scrollDirection: -1
