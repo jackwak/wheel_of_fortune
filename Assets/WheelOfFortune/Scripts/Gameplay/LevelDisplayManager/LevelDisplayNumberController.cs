@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using WheelOfFortune.Utils.UIMover;
+using WheelOfFortune.Gameplay.LevelDisplayManager.Config;
 using Zenject;
 
 namespace WheelOfFortune.Gameplay.LevelDisplayManager
