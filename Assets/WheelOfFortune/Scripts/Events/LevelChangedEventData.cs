@@ -1,10 +1,10 @@
 namespace WheelOfFortune.Events
 {
-    public struct LevelChangedEventData
+    public struct LevelChangedEvent
     {
         public int NewLevel { get; }
 
-        public LevelChangedEventData(int newLevel)
+        public LevelChangedEvent(int newLevel)
         {
             NewLevel = newLevel;
         }

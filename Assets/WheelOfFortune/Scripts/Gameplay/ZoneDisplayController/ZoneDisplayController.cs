@@ -7,82 +7,84 @@ using WheelOfFortune.Config;
 using WheelOfFortune.Enums;
 using WheelOfFortune.Utils.RankDeterminer;
 
-public class ZoneDisplayController : MonoBehaviour
+namespace WheelOfFortune.Gameplay.ZoneDisplayController
 {
-    [Header("UI Elements")]
-    [SerializeField] private ZoneNumberTextData[] zoneNumberTexts;
-
-    [Header("Dependencies")]
-    [SerializeField] private LevelRankConfig _levelRankConfig;
-    [SerializeField] private LevelConfig _levelConfig;
-
-    private IEventBus _eventBus;
-    private RankDeterminer _rankDeterminer;
-
-    [Inject]
-    public void Construct(IEventBus eventBus, RankDeterminer rankDeterminer)
+    public class ZoneDisplayController : MonoBehaviour
     {
-        _eventBus = eventBus;
-        _rankDeterminer = rankDeterminer;
-    }
+        [Header("UI Elements")]
+        [SerializeField] private ZoneNumberTextData[] zoneNumberTexts;
 
-    private void OnEnable()
-    {
-        _eventBus.Subscribe<LevelChangedEventData>(OnLevelChanged);
-    }
+        [Header("Dependencies")]
+        [SerializeField] private LevelRankConfig _levelRankConfig;
+        [SerializeField] private LevelConfig _levelConfig;
 
-    private void OnDisable()
-    {
-        _eventBus.UnSubscribe<LevelChangedEventData>(OnLevelChanged);
-    }
+        private IEventBus _eventBus;
+        private RankDeterminer _rankDeterminer;
 
-    private void Start()
-    {
-        Initialize(_levelConfig.StartLevel);
-    }
-
-    public void Initialize(int currentLevel)
-    {
-        RefreshZoneNumbers(currentLevel);
-    }
-
-    private void OnLevelChanged(LevelChangedEventData eventData)
-    {
-        RefreshZoneNumbers(eventData.NewLevel);
-    }
-
-    private void RefreshZoneNumbers(int currentLevel)
-    {
-        foreach (ZoneNumberTextData zoneNumberText in zoneNumberTexts)
+        [Inject]
+        public void Construct(IEventBus eventBus, RankDeterminer rankDeterminer)
         {
-            if (zoneNumberText.Text == null)
-                continue;
+            _eventBus = eventBus;
+            _rankDeterminer = rankDeterminer;
+        }
 
-            int nextLevel = GetNextLevelForRank(currentLevel, zoneNumberText.Rank);
+        private void OnEnable()
+        {
+            _eventBus.Subscribe<LevelChangedEvent>(OnLevelChanged);
+        }
 
-            zoneNumberText.Text.text = nextLevel.ToString();
+        private void OnDisable()
+        {
+            _eventBus.UnSubscribe<LevelChangedEvent>(OnLevelChanged);
+        }
+
+        private void Start()
+        {
+            Initialize(_levelConfig.StartLevel);
+        }
+
+        public void Initialize(int currentLevel)
+        {
+            RefreshZoneNumbers(currentLevel);
+        }
+
+        private void OnLevelChanged(LevelChangedEvent eventData)
+        {
+            RefreshZoneNumbers(eventData.NewLevel);
+        }
+
+        private void RefreshZoneNumbers(int currentLevel)
+        {
+            foreach (ZoneNumberTextData zoneNumberText in zoneNumberTexts)
+            {
+                if (zoneNumberText.Text == null)
+                    continue;
+
+                int nextLevel = GetNextLevelForRank(currentLevel, zoneNumberText.Rank);
+
+                zoneNumberText.Text.text = nextLevel.ToString();
+            }
+        }
+
+        private int GetNextLevelForRank(int currentLevel, Rank targetRank)
+        {
+            int nextLevel = currentLevel + 1;
+
+            while (true)
+            {
+                Rank rank = _rankDeterminer.DetermineRank(nextLevel);
+
+                if (rank == targetRank)
+                    return nextLevel;
+
+                nextLevel++;
+            }
         }
     }
-
-    private int GetNextLevelForRank(int currentLevel, Rank targetRank)
+    [System.Serializable]
+    public struct ZoneNumberTextData
     {
-        int nextLevel = currentLevel + 1;
-
-        while (true)
-        {
-            Rank rank = _rankDeterminer.DetermineRank(nextLevel);
-
-            if (rank == targetRank)
-                return nextLevel;
-
-            nextLevel++;
-        }
+        public Rank Rank;
+        public TextMeshProUGUI Text;
     }
-}
-
-[System.Serializable]
-public struct ZoneNumberTextData
-{
-    public Rank Rank;
-    public TextMeshProUGUI Text;
 }

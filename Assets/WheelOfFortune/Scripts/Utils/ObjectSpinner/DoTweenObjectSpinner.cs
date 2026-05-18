@@ -15,12 +15,12 @@ namespace WheelOfFortune.Utils.ObjectSpinner
         public void SpinObject(Transform objectToSpin, int sliceCount, int targetSliceIndex, System.Action onComplete = null)
         {
             float sliceAngle = 360f / sliceCount;
-            int randomSpins = Random.Range(_config.minSpinCount, _config.maxSpinCount);
+            int randomSpins = Random.Range(_config.MinSpinCount, _config.MaxSpinCount);
             float targetAngle = (360f * randomSpins) + sliceAngle * targetSliceIndex;
 
             var tweener = objectToSpin
-                .DORotate(new Vector3(0, 0, targetAngle * (int)_config.scrollDirection), _config.spinDuration, RotateMode.FastBeyond360)
-                .SetEase(_config.spinEase)
+                .DORotate(new Vector3(0, 0, targetAngle * (int)_config.ScrollDirection), _config.SpinDuration, RotateMode.FastBeyond360)
+                .SetEase(_config.SpinEase)
                 .OnComplete(() => onComplete?.Invoke());
         }
     }

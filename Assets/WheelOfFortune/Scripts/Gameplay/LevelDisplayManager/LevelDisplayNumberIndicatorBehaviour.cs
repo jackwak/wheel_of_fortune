@@ -28,12 +28,12 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
 
         void OnEnable()
         {
-            _eventBus.Subscribe<LevelChangedEventData>(OnLevelNumberChanged);
+            _eventBus.Subscribe<LevelChangedEvent>(OnLevelNumberChanged);
         }
 
         void OnDisable()
         {
-            _eventBus.UnSubscribe<LevelChangedEventData>(OnLevelNumberChanged);
+            _eventBus.UnSubscribe<LevelChangedEvent>(OnLevelNumberChanged);
         }
 
         public void Initialize(int startLevel)
@@ -41,7 +41,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
             SetBackgroundColor(GetColorByRank(GetRankByLevel(startLevel)));
         }
 
-        private void OnLevelNumberChanged(LevelChangedEventData eventData)
+        private void OnLevelNumberChanged(LevelChangedEvent eventData)
         {
             SetBackgroundColor(GetColorByRank(GetRankByLevel(eventData.NewLevel)));
         }

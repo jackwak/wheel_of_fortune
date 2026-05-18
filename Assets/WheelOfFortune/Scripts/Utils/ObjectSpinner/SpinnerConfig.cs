@@ -7,11 +7,17 @@ namespace WheelOfFortune.Utils.ObjectSpinner
     public class SpinnerConfig : ScriptableObject
     {
         [Header("Spin Settings")]
-        public int minSpinCount = 3;
-        public int maxSpinCount = 7;
-        public float spinDuration = 3f;
-        public Ease spinEase = Ease.InExpo;
-        public SpinScrollDirection scrollDirection = SpinScrollDirection.Clockwise;
+        [SerializeField] private int _minSpinCount = 3;
+        [SerializeField] private int _maxSpinCount = 7;
+        [SerializeField] private float _spinDuration = 3f;
+        [SerializeField] private Ease _spinEase = Ease.InExpo;
+        [SerializeField] private SpinScrollDirection _scrollDirection = SpinScrollDirection.Clockwise;
+        
+        public int MinSpinCount => _minSpinCount;
+        public int MaxSpinCount => _maxSpinCount;
+        public float SpinDuration => _spinDuration;
+        public Ease SpinEase => _spinEase;
+        public SpinScrollDirection ScrollDirection => _scrollDirection;
     }
 
     public enum SpinScrollDirection

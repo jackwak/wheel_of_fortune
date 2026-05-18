@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee289a083f0efbe4a90b588c59053cea, type: 3}
   m_Name: SpinnerConfig_Default
   m_EditorClassIdentifier: 
-  minSpinCount: 3
-  maxSpinCount: 7
-  spinDuration: 2
-  spinEase: 21
-  scrollDirection: -1
+  _minSpinCount: 3
+  _maxSpinCount: 7
+  _spinDuration: 3
+  _spinEase: 21
+  _scrollDirection: -1

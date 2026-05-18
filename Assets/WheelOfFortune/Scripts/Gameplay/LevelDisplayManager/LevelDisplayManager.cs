@@ -20,12 +20,12 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
 
         void OnEnable()
         {
-            _eventBus.Subscribe<LevelChangedEventData>(OnLevelChanged);
+            _eventBus.Subscribe<LevelChangedEvent>(OnLevelChanged);
         }
 
         void OnDisable()
         {
-            _eventBus.UnSubscribe<LevelChangedEventData>(OnLevelChanged);
+            _eventBus.UnSubscribe<LevelChangedEvent>(OnLevelChanged);
         }
 
         void Start()
@@ -33,7 +33,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
             _initializer.Initialize(_numberController);
         }
 
-        private void OnLevelChanged(LevelChangedEventData eventData)
+        private void OnLevelChanged(LevelChangedEvent eventData)
         {
             _numberController.ScrollNumbers();
         }
@@ -49,7 +49,7 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
         int level = 2;
         public void NextLevel()
         {
-            _eventBus.Publish(new LevelChangedEventData(level));
+            _eventBus.Publish(new LevelChangedEvent(level));
             level++;
             Debug.Log(level);
         }

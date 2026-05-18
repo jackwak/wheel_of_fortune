@@ -17,5 +17,6 @@ public class SceneInstaller : MonoInstaller
         Container.Bind<RankDeterminer>().FromComponentInHierarchy().AsSingle();
         Container.Bind<RankColorPalette>().FromInstance(_numberColorPalette).AsSingle();
         Container.Bind<IObjectSpinner>().To<DoTweenObjectSpinner>().AsTransient();
+        Container.Bind<IRewardDataProvider>().To<ResourcesRewardDataProvider>().AsSingle();
     }
 }

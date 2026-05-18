@@ -49,7 +49,7 @@ namespace WheelOfFortune.Gameplay.SpinController
 
         public void OnSpinComplete()
         {
-            _eventBus.Publish(new LevelChangedEventData(level++));
+            _eventBus.Publish(new LevelChangedEvent(level++));
         }
     }
 }
