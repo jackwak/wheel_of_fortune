@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using WheelOfFortune.Gameplay.Wheel;
 
 public class IndicatorController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class IndicatorController : MonoBehaviour
 
     private Tween _rotationTween;
     private Vector3 _initialRotation;
+    private Collider2D _lastTriggeredCollider;
 
     private void Awake()
     {
@@ -18,9 +20,11 @@ public class IndicatorController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (((1 << collision.gameObject.layer) & _triggerLayerMask) == 0)
-            return;
+        if (((1 << collision.gameObject.layer) & _triggerLayerMask) == 0) return;
+        if (!collision.TryGetComponent(out WheelCellDisplay _)) return;
+        if (collision == _lastTriggeredCollider) return;
 
+        _lastTriggeredCollider = collision;
         RotateIndicator();
     }
 
@@ -28,8 +32,8 @@ public class IndicatorController : MonoBehaviour
     {
         _rotationTween?.Kill();
 
-        _rotationTween = DOTween.Sequence().Append(_objectToRotate.DOLocalRotate(new Vector3(0, 0, _config.RotationAngle * _config.SpinDirectionMultiplier),_config.RotationDuration
-            ).SetEase(_config.RotationEase)).Append(_objectToRotate.DOLocalRotate(_initialRotation,_config.RotationDuration
+        _rotationTween = DOTween.Sequence().Append(_objectToRotate.DOLocalRotate(new Vector3(0, 0, _config.RotationAngle * _config.SpinDirectionMultiplier), _config.RotationDuration
+            ).SetEase(_config.RotationEase)).Append(_objectToRotate.DOLocalRotate(_initialRotation, _config.RotationDuration
             ).SetEase(Ease.OutQuad))
             .OnComplete(() =>
             {

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: IndicatorControllerConfig_Default
   m_EditorClassIdentifier: 
   _rotationAngle: 15
-  _rotationDuration: 0.2
-  _rotationEase: 22
+  _rotationDuration: 0.1
+  _rotationEase: 16
   _spinnerConfig: {fileID: 11400000, guid: 26695826f26022e4ea21a5160e3e6452, type: 2}
