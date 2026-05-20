@@ -190,33 +190,57 @@ Assets/WheelOfFortune/
 
 ### 16:9
 
-[![Watch the 16:9 gameplay video](https://img.youtube.com/vi/vBQ41tHJFRw/hqdefault.jpg)](https://www.youtube.com/watch?v=vBQ41tHJFRw)
+**Gameplay video**
 
-<p>
-  <img src="https://drive.google.com/uc?export=view&id=1FZHJ6pfbRnvWSwAy8qHDgYbynOmS8QWy" alt="16:9 screenshot 1" width="32%" />
-  <img src="https://drive.google.com/uc?export=view&id=1R06zqjQtBc-n_Xe-NcMOqL-IZgt1F7PW" alt="16:9 screenshot 2" width="32%" />
-  <img src="https://drive.google.com/uc?export=view&id=16uCYqDHRAP3Pc3lAxg4sHDg75ngFgHLx" alt="16:9 screenshot 3" width="32%" />
-</p>
+[<img src="https://img.youtube.com/vi/vBQ41tHJFRw/hqdefault.jpg" width="600" alt="16:9 gameplay video" />](https://www.youtube.com/watch?v=vBQ41tHJFRw)
+
+**Screenshot 1**
+
+<img src="https://drive.google.com/uc?export=view&id=1FZHJ6pfbRnvWSwAy8qHDgYbynOmS8QWy" width="600" alt="16:9 screenshot 1" />
+
+**Screenshot 2**
+
+<img src="https://drive.google.com/uc?export=view&id=1R06zqjQtBc-n_Xe-NcMOqL-IZgt1F7PW" width="600" alt="16:9 screenshot 2" />
+
+**Screenshot 3**
+
+<img src="https://drive.google.com/uc?export=view&id=16uCYqDHRAP3Pc3lAxg4sHDg75ngFgHLx" width="600" alt="16:9 screenshot 3" />
 
 ### 20:9
 
-[![Watch the 20:9 gameplay video](https://img.youtube.com/vi/yTubEGO-jLQ/hqdefault.jpg)](https://www.youtube.com/watch?v=yTubEGO-jLQ)
+**Gameplay video**
 
-<p>
-  <img src="https://drive.google.com/uc?export=view&id=1Vc3qjp8PnWPtsAr8PFpe2yU7XJIm7oVH" alt="20:9 screenshot 1" width="32%" />
-  <img src="https://drive.google.com/uc?export=view&id=1_DEcyrnlQS8kBpwAuvrQzvKuvUsGwQ9-" alt="20:9 screenshot 2" width="32%" />
-  <img src="https://drive.google.com/uc?export=view&id=1H-Byh8Qtql777ZI-IDFhaSI2LIBLUvLY" alt="20:9 screenshot 3" width="32%" />
-</p>
+[<img src="https://img.youtube.com/vi/yTubEGO-jLQ/hqdefault.jpg" width="600" alt="20:9 gameplay video" />](https://www.youtube.com/watch?v=yTubEGO-jLQ)
+
+**Screenshot 1**
+
+<img src="https://drive.google.com/uc?export=view&id=1Vc3qjp8PnWPtsAr8PFpe2yU7XJIm7oVH" width="600" alt="20:9 screenshot 1" />
+
+**Screenshot 2**
+
+<img src="https://drive.google.com/uc?export=view&id=1_DEcyrnlQS8kBpwAuvrQzvKuvUsGwQ9-" width="600" alt="20:9 screenshot 2" />
+
+**Screenshot 3**
+
+<img src="https://drive.google.com/uc?export=view&id=1H-Byh8Qtql777ZI-IDFhaSI2LIBLUvLY" width="600" alt="20:9 screenshot 3" />
 
 ### 4:3
 
-[![Watch the 4:3 gameplay video](https://img.youtube.com/vi/prO2630oSsQ/hqdefault.jpg)](https://www.youtube.com/watch?v=prO2630oSsQ)
+**Gameplay video**
 
-<p>
-  <img src="https://drive.google.com/uc?export=view&id=1zQqwAvyaFVE0jj2ElWGd7aOkQEIy7Y5-" alt="4:3 screenshot 1" width="32%" />
-  <img src="https://drive.google.com/uc?export=view&id=1Ins1FEFMyUdgin74lNoQv9WuTUE9SeBe" alt="4:3 screenshot 2" width="32%" />
-  <img src="https://drive.google.com/uc?export=view&id=1SaMkl5QP4ZVTcfyvYaOFCwCfR11qBGti" alt="4:3 screenshot 3" width="32%" />
-</p>
+[<img src="https://img.youtube.com/vi/prO2630oSsQ/hqdefault.jpg" width="600" alt="4:3 gameplay video" />](https://www.youtube.com/watch?v=prO2630oSsQ)
+
+**Screenshot 1**
+
+<img src="https://drive.google.com/uc?export=view&id=1zQqwAvyaFVE0jj2ElWGd7aOkQEIy7Y5-" width="600" alt="4:3 screenshot 1" />
+
+**Screenshot 2**
+
+<img src="https://drive.google.com/uc?export=view&id=1Ins1FEFMyUdgin74lNoQv9WuTUE9SeBe" width="600" alt="4:3 screenshot 2" />
+
+**Screenshot 3**
+
+<img src="https://drive.google.com/uc?export=view&id=1SaMkl5QP4ZVTcfyvYaOFCwCfR11qBGti" width="600" alt="4:3 screenshot 3" />
 
 ### Direct links (in case the previews above don't render)
 
