@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/WheelOfFortune/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/WheelOfFortune/Scenes/GameScene.unity
+    guid: b4248d7e452337b429a724aa48ae8f65
   m_configObjects: {}

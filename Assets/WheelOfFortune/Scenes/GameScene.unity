@@ -2212,7 +2212,7 @@ MonoBehaviour:
   _buttonCanvasGroup: {fileID: 1390213669}
   _reviveButton: {fileID: 1543706200}
   _giveUpButton: {fileID: 1713945469}
-  _reviveCostText: {fileID: 0}
+  _reviveCostText: {fileID: 1424758147}
   _fadeDuration: 0.5
   _delayBeforeFade: 0.5
 --- !u!1 &939590203
