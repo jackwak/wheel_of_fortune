@@ -241,11 +241,3 @@ Assets/WheelOfFortune/
 **Screenshot 3**
 
 <img src="https://drive.google.com/uc?export=view&id=1SaMkl5QP4ZVTcfyvYaOFCwCfR11qBGti" width="600" alt="4:3 screenshot 3" />
-
-### Direct links (in case the previews above don't render)
-
-**16:9** — [Video](https://www.youtube.com/watch?v=vBQ41tHJFRw) · [Photo 1](https://drive.google.com/file/d/1FZHJ6pfbRnvWSwAy8qHDgYbynOmS8QWy/view?usp=drive_link) · [Photo 2](https://drive.google.com/file/d/1R06zqjQtBc-n_Xe-NcMOqL-IZgt1F7PW/view?usp=drive_link) · [Photo 3](https://drive.google.com/file/d/16uCYqDHRAP3Pc3lAxg4sHDg75ngFgHLx/view?usp=drive_link)
-
-**20:9** — [Video](https://www.youtube.com/watch?v=yTubEGO-jLQ) · [Photo 1](https://drive.google.com/file/d/1Vc3qjp8PnWPtsAr8PFpe2yU7XJIm7oVH/view?usp=drive_link) · [Photo 2](https://drive.google.com/file/d/1_DEcyrnlQS8kBpwAuvrQzvKuvUsGwQ9-/view?usp=drive_link) · [Photo 3](https://drive.google.com/file/d/1H-Byh8Qtql777ZI-IDFhaSI2LIBLUvLY/view?usp=drive_link)
-
-**4:3** — [Video](https://www.youtube.com/watch?v=prO2630oSsQ) · [Photo 1](https://drive.google.com/file/d/1zQqwAvyaFVE0jj2ElWGd7aOkQEIy7Y5-/view?usp=drive_link) · [Photo 2](https://drive.google.com/file/d/1Ins1FEFMyUdgin74lNoQv9WuTUE9SeBe/view?usp=drive_link) · [Photo 3](https://drive.google.com/file/d/1SaMkl5QP4ZVTcfyvYaOFCwCfR11qBGti/view?usp=drive_link)
