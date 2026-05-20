@@ -1,5 +1,5 @@
 using UnityEngine;
-using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Core.EventSystem;
 using WheelOfFortune.Events;
 using Zenject;
 
@@ -36,22 +36,6 @@ namespace WheelOfFortune.Gameplay.LevelDisplayManager
         private void OnLevelChanged(LevelChangedEvent eventData)
         {
             _numberController.ScrollNumbers();
-        }
-
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Backspace))
-            {
-                NextLevel();
-            }
-        }
-
-        int level = 2;
-        public void NextLevel()
-        {
-            _eventBus.Publish(new LevelChangedEvent(level));
-            level++;
-            Debug.Log(level);
         }
     }
 }

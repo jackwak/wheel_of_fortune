@@ -3,7 +3,7 @@ using UnityEngine;
 using Zenject;
 using WheelOfFortune.Utils.RankDeterminer;
 using WheelOfFortune.Events;
-using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Core.EventSystem;
 using WheelOfFortune.Config;
 using WheelOfFortune.Enums;
 

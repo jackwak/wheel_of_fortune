@@ -10,11 +10,13 @@ namespace WheelOfFortune.Gameplay.Wheel
         [SerializeField] private float _cellRadius = 100f;
         [SerializeField] private Sprite _bombSprite;
         [SerializeField] private BombCountByRank[] _bombCountByRank;
+        [SerializeField] private int _cellRotationOffsetDegrees = -90;
 
         public int SliceCount => _sliceCount;
         public float CellRadius => _cellRadius;
         public Sprite BombSprite => _bombSprite;
         public BombCountByRank[] BombCountByRank => _bombCountByRank;
+        public int CellRotationOffsetDegrees => _cellRotationOffsetDegrees;
     }
 
     [System.Serializable]

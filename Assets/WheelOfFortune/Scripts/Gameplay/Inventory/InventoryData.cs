@@ -1,18 +1,27 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class InventoryData : MonoBehaviour
+namespace WheelOfFortune.Gameplay.Inventory
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    public struct InventoryData
     {
-        
+        public List<ItemData> Items;
+
+        [NonSerialized]
+        public List<ItemData> PendingItems;
     }
 
-    // Update is called once per frame
-    void Update()
+    [Serializable]
+    public struct ItemData
     {
-        
+        public string Name;
+        public int Count;
+
+        public ItemData(string name, int count)
+        {
+            Name = name;
+            Count = count;
+        }
     }
 }

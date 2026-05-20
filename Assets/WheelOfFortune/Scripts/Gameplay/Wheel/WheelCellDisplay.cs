@@ -7,8 +7,10 @@ namespace WheelOfFortune.Gameplay.Wheel
     {
         [SerializeField] private Image _iconImage;
         [SerializeField] private TextMeshProUGUI _countText;
-
+        
         private IWheelCellContent _content;
+
+        public IWheelCellContent GetContent() => _content;
 
         public void Initialize(IWheelCellContent content)
         {
@@ -21,6 +23,5 @@ namespace WheelOfFortune.Gameplay.Wheel
             content.Render(_iconImage, _countText);
         }
 
-        public IWheelCellContent GetContent() => _content;
     }
 }

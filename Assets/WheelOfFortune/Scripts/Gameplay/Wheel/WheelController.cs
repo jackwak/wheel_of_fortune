@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Core.EventSystem;
 using WheelOfFortune.Enums;
 using WheelOfFortune.Events;
+using WheelOfFortune.Gameplay.Reward;
 using WheelOfFortune.Utils.RankDeterminer;
 using Zenject;
 
@@ -28,13 +29,13 @@ namespace WheelOfFortune.Gameplay.Wheel
         void OnEnable()
         {
             _eventBus.Subscribe<OnGameStartEvent>(OnGameStart);
-            //_eventBus.Subscribe<LevelChangedEvent>(OnLevelChanged);
+            _eventBus.Subscribe<LevelChangedEvent>(OnLevelChanged);
         }
 
         void OnDisable()
         {
             _eventBus.UnSubscribe<OnGameStartEvent>(OnGameStart);
-            //_eventBus.UnSubscribe<LevelChangedEvent>(OnLevelChanged);
+            _eventBus.UnSubscribe<LevelChangedEvent>(OnLevelChanged);
         }
 
         private void OnGameStart(OnGameStartEvent eventData)
@@ -43,7 +44,6 @@ namespace WheelOfFortune.Gameplay.Wheel
             InitializeWheel(eventData.StartLevel);
         }
 
-        //TODO: subscribe after reward movement is done, currently subscribing to OnGameStartEvent for testing purposes
         private void OnLevelChanged(LevelChangedEvent eventData)
         {
             InitializeWheel(eventData.NewLevel);

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Android;
 
 namespace WheelOfFortune.Gameplay.Wheel
 {
@@ -27,7 +26,9 @@ namespace WheelOfFortune.Gameplay.Wheel
                 Vector3 localPosition = new Vector3(Mathf.Cos(radian) * config.CellRadius, Mathf.Sin(radian) * config.CellRadius, 0f);
 
                 cell.transform.localPosition = localPosition;
-                cell.transform.localRotation = Quaternion.FromToRotation(Vector3.up, localPosition.normalized);
+
+                float zRotation = angle + config.CellRotationOffsetDegrees;
+                cell.transform.localRotation = Quaternion.Euler(0f, 0f, zRotation);
             }
         }
 

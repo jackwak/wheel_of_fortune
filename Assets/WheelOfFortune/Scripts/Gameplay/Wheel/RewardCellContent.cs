@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine.UI;
+using WheelOfFortune.Gameplay.Reward;
 
 namespace WheelOfFortune.Gameplay.Wheel
 {
@@ -15,6 +16,6 @@ namespace WheelOfFortune.Gameplay.Wheel
             countText.text = $"x{_rewardData.Count}";
         }
 
-        public void Apply() { }
+        public RewardData GetRewardData() => _rewardData;
     }
 }

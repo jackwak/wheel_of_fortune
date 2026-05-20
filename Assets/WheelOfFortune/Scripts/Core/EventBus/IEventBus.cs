@@ -1,4 +1,4 @@
-namespace WheelOfFortune.Core.EventBus
+namespace WheelOfFortune.Core.EventSystem
 {
     public interface IEventBus
     {

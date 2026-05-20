@@ -1,5 +1,5 @@
 using UnityEngine;
-using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Core.EventSystem;
 using WheelOfFortune.Events;
 using WheelOfFortune.Gameplay.SpinController.Events;
 using WheelOfFortune.Utils.ObjectSpinner;
@@ -44,12 +44,9 @@ namespace WheelOfFortune.Gameplay.SpinController
             _objectSpinner.SpinObject(_objectToSpin, _wheelSegments, randomSegment, OnSpinComplete);
         }
 
-        // TODO: Level management should be handled by a dedicated GameManager or LevelManager, not directly in the SpinController
-        int level = 1;
-
         public void OnSpinComplete()
         {
-            _eventBus.Publish(new LevelChangedEvent(level++));
+            _eventBus.Publish(new OnSpinCompleteEvent());
         }
     }
 }

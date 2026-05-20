@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Core.EventSystem;
 using Zenject;
 using WheelOfFortune.Events;
 using WheelOfFortune.Config;

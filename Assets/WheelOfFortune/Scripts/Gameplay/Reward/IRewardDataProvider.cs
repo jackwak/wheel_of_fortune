@@ -1,8 +1,10 @@
 using WheelOfFortune.Enums;
 
-public interface IRewardDataProvider
+namespace WheelOfFortune.Gameplay.Reward
 {
-    public RewardData[] GetRewardDataByRank(Rank rank);
-    public RewardData[] GetRandomRewardDataByRank(Rank rank, int count);
+    public interface IRewardDataProvider
+    {
+        public RewardData[] GetRewardDataByRank(Rank rank);
+        public RewardData[] GetRandomRewardDataByRank(Rank rank, int count);
+    }
 }
-

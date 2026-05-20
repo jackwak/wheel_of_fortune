@@ -13,14 +13,19 @@ namespace WheelOfFortune.Utils.BaseButton
             _button = GetComponent<Button>();
         }
 
-        void OnEnable()
+        protected virtual void OnEnable()
         {
             _button.onClick.AddListener(OnButtonClicked);
         }
 
-        void OnDisable()
+        protected virtual void OnDisable()
         {
             _button.onClick.RemoveListener(OnButtonClicked);
+        }
+
+        protected void SetInteractable(bool value)
+        {
+            _button.interactable = value;
         }
 
         protected abstract void OnButtonClicked();

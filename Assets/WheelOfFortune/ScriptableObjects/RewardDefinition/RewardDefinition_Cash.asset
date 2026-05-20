@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadc12bfd5de2bd499004d4b3521366d, type: 3}
   m_Name: RewardDefinition_Cash
   m_EditorClassIdentifier: 
-  Name: Silver_Chest
+  Name: Cash
   Icon: {fileID: 21300000, guid: d3584debca78e554482ace898dee63e5, type: 3}

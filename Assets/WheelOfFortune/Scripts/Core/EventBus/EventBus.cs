@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using WheelOfFortune.Core.EventBus;
+using WheelOfFortune.Core.EventSystem;
 
 public sealed class EventBus : IEventBus
 {
